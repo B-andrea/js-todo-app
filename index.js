@@ -57,7 +57,22 @@
      function deleteTodo() {
         var li = this.parentElement; // Grabbing parent list element of the text and delete button which are direct children of the list
         myList.removeChild(li); // Removing the list element
+        }
 
+        function newTodo() {
+       var inputVal = document.getElementById("todoTitle").value;
+       var listItem = document.createElement("li");
+       listItem.appendChild(
+         document.createTextNode(inputVal) 
+       );
+       var deleteLink = document.createElement("a");
+       deleteLink.href = "#";
+       deleteLink.className = "btn btn-sm btn-danger m-1 delete";
+       deleteLink.appendChild(
+         document.createTextNode("Delete") 
+       );
+       listItem.appendChild(deleteLink);
+       myList.appendChild(listItem);
      }
      
  
