@@ -40,6 +40,14 @@
         listItem.appendChild(
             document.createTextNode(element.title)
         );
+        var deleteLink = document.createElement("a"); //Creating the delete button
+
+        deleteLink.href = '#'; //Avoids deleteLink button navigating to another page
+        deleteLink.className = "btn btn-sm btn-danger m-1 delete"; // Applying bootstrap styling to the button
+        deleteLink.appendChild(
+            document.createTextNode("Delete") // Appending/adding the 'delete' text to the 'deleteLink' button
+        );
+        listItem.appendChild(deleteLink); // Append/Add 'deleteLink' button to list items
         myList.appendChild(listItem);
      });
  
