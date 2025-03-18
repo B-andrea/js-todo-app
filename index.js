@@ -50,4 +50,14 @@
         listItem.appendChild(deleteLink); // Append/Add 'deleteLink' button to list items
         myList.appendChild(listItem);
      });
+     var closeButtons = document.getElementsByClassName("delete");
+     for (var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].addEventListener('click', deleteTodo, false);
+     } // looping through every delete button and adding deleteTodo function to it
+     function deleteTodo() {
+        var li = this.parentElement; // Grabbing parent list element of the text and delete button which are direct children of the list
+        myList.removeChild(li); // Removing the list element
+
+     }
+     
  
