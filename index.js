@@ -31,4 +31,15 @@
          "completed": false
        }
      ];
+
+
+     var myList = document.getElementById("todo-list");
+
+     json_data.forEach(element => { 
+        var listItem = document.createElement("li");
+        listItem.appendChild(
+            document.createTextNode(element.title)
+        );
+        myList.appendChild(listItem);
+     });
  
