@@ -1,45 +1,16 @@
-var json_data = [
-    {
-        userId: 1,
-        id: 1,
-        title: "delectus aut autem",
-        completed: false,
-    },
-    {
-        userId: 1,
-        id: 2,
-        title: "quis ut nam facilis et officia qui",
-        completed: false,
-    },
-    {
-        userId: 1,
-        id: 3,
-        title: "fugiat veniam minus",
-        completed: false,
-    },
-    {
-        userId: 1,
-        id: 4,
-        title: "et porro tempora",
-        completed: true,
-    },
-    {
-        userId: 1,
-        id: 5,
-        title: "laboriosam mollitia et enim quasi adipisci quia provident illum",
-        completed: false,
-    },
-];
-
+var json_data = [];
 var myList = document.getElementById("todo-list");
 
 json_data.forEach((element) => {
     newTodo(element.title);
 });
 
-var closeButtons = document.getElementsByClassName("delete");
-for (var i = 0; i < closeButtons.length; i++) {
-    closeButtons[i].addEventListener("click", deleteTodo, false);
+registerEventListener();
+function registerEventListener() {
+    var closeButtons = document.getElementsByClassName("delete");
+    for (var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].addEventListener("click", deleteTodo, false);
+    }
 } // looping through every delete button and adding deleteTodo function to it
 
 function deleteTodo() {
@@ -49,6 +20,7 @@ function deleteTodo() {
 
 function newTodo(todoTitle) {
     if (!todoTitle) {
+        // If textbox is not empty, execute the below code
         todoTitle = document.getElementById("todoTitle").value;
     }
     var listItem = document.createElement("li");
@@ -60,4 +32,5 @@ function newTodo(todoTitle) {
     deleteLink.appendChild(document.createTextNode("Delete"));
     listItem.appendChild(deleteLink);
     myList.appendChild(listItem);
+    registerEventListener();
 }
