@@ -33,4 +33,6 @@ function newTodo(todoTitle) {
     listItem.appendChild(deleteLink);
     myList.appendChild(listItem);
     registerEventListener();
+    console.log("new todo added");
+    console.log(listItem);
 }
