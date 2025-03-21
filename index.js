@@ -81,3 +81,7 @@ function storeTodoLocal(todoTitle) {
     // Converts the updated json_temp array back into a JSON string
     return todoID;
 }
+function deleteAllTodos() {
+    localStorage.removeItem("json_data");
+    myList.innerHTML = "";
+}
